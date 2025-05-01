@@ -41,7 +41,7 @@ export default function Home() {
           </h1>
 
           <p className="text-lg sm:text-xl md:text-2xl text-white mb-8 sm:mb-12 animate-fade-in max-w-2xl mx-auto px-4">
-            the hub for students who turn dreams into reality 
+            the hub for students who turn dreams into reality. 
           </p>
 
           <p className="text-md sm:text-lg text-white/80 mb-6 animate-fade-in">
