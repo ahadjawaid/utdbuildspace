@@ -1,5 +1,19 @@
 @import "tailwindcss";
 
+/* Define the hint colors as CSS variables for easy use */
+:root {
+  --color-orange-hint: #FF7B00;
+  --color-green-hint: #3BA66B;
+}
+
+body {
+  background-color: #000000;
+  color: #ffffff;
+  text-transform: lowercase;
+  /* Apply Geist Sans by default */
+  font-family: var(--font-geist-sans), sans-serif;
+}
+
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -13,28 +27,13 @@
   animation: fade-in 0.8s ease-out forwards;
 }
 
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+/* Link hover styles - Target the SVG inside */
+.link-icon-hover-orange:hover svg {
+  color: var(--color-orange-hint);
 }
 
-.animate-fade-in {
-  animation: fade-in 0.8s ease-out forwards;
+.link-icon-hover-green:hover svg {
+  color: var(--color-green-hint);
 }
 
-/* Glow effects for the text */
-.glow-text-blue {
-  text-shadow: 0 0 15px rgba(147, 197, 253, 0.5);
-}
-
-.glow-text-emerald {
-  text-shadow: 0 0 15px rgba(110, 231, 183, 0.5);
-}
-
-.glow-text-violet {
-  text-shadow: 0 0 15px rgba(196, 181, 253, 0.5);
-}
+/* Removed glow classes */
