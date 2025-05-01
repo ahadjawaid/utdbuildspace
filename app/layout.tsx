@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -12,7 +12,16 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+function getBaseUrl() {
+  if (process.env.NEXT_PUBLIC_VERCEL_URL) {
+    return `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`;
+  }
+
+  return 'http://localhost:3000';
+}
+
 export const metadata: Metadata = {
+  metadataBase: new URL(getBaseUrl()),
   title: "utdbuildspace",
   description: "The hub for UTD student builders. Chase ideas. Ship projects. Build startups.",
   keywords: ["UTD", "University of Texas at Dallas", "builders", "startups", "students", "alumni", "projects", "entrepreneurship"],
@@ -22,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "utdbuildspace",
     description: "The hub for UTD student builders. Chase ideas. Ship projects. Build startups.",
-    url: "https://utdbuildspace.com",
+    url: "/",
     siteName: "UTDBuildSpace",
     images: [
       {
@@ -47,12 +56,13 @@ export const metadata: Metadata = {
     apple: "/logo.png",
   },
   manifest: "/manifest.json",
-  themeColor: "#000000",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-  },
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  themeColor: '#000000',
 };
 
 export default function RootLayout({
