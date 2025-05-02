@@ -4,11 +4,12 @@
 :root {
   --color-orange-hint: #FF7B00;
   --color-green-hint: #3BA66B;
+  --color-off-white: #F1EDE5;
 }
 
 body {
   background-color: #000000;
-  color: #ffffff;
+  color: var(--color-off-white);
   text-transform: lowercase;
   /* Apply Geist Sans by default */
   font-family: var(--font-geist-sans), sans-serif;
